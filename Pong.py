@@ -106,7 +106,6 @@ while True:
         pen.write(" {} ".format(score_b), align="Left", font=("Courier", 44, "normal"))
         pen.write(" {} ".format(score_a), align="Right", font=("Courier", 44, "normal"))
 
-    
     if ball.xcor() < -390:
         ball.goto(0, 0)
         ball.dx *= -1
@@ -131,3 +130,17 @@ while True:
         paddle_b_up()
     elif paddle_b.ycor() > ball.ycor() and abs(paddle_b.ycor() - ball.ycor()) > 10:
         paddle_b_down()
+    if score_a == 10 :
+        win.clear()
+        win.bgcolor("Black")
+        pen.clear()
+        pen.goto(0,0)
+        pen.write("Player A Wins!!!", align = "Center", font=("Courier", 44, "normal"))
+        win.ontimer(win.bye,1000)
+    elif score_b == 10 :
+        win.clear()
+        win.bgcolor("Black")
+        pen.clear()
+        pen.goto(0,0) 
+        pen.write("Player B Wins!!!", align = "Center", font=("Courier", 44, "normal"))
+        win.ontimer(win.bye,1000)
